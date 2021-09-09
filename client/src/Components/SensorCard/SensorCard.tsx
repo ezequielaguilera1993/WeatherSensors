@@ -18,6 +18,9 @@ export const SensorCard: React.FunctionComponent<SensorAndEventsType> = ({
 
     function handleDeleteSensor() {
         console.log("img");
+        axios.delete("http://localhost:3001/sensor/deleteSensor", {
+            data: { id }
+        });
     }
 
     let eventsValues = sensorEvents.map(e => e.value)
