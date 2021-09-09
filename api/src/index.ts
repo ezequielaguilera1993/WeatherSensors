@@ -7,8 +7,6 @@ import server from './server';
 //     cors: { origin: "*" },
 // });
 
-
-
 dotenv.config()
 
 const PORT = process.env.PORT || 3001
