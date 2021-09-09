@@ -1,5 +1,3 @@
-import React from 'react';
-import logo from './logo.svg';
 import './App.css';
 import { Sensors } from './Components/Sensors/Sensors';
 import { SensorEvents } from './Components/SensorEvents/SensorEvents';

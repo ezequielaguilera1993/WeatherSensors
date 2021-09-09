@@ -1,7 +1,6 @@
 import { createStore, applyMiddleware, compose } from 'redux';
-import { rootReducer } from '../reducers/index';
 import thunk from 'redux-thunk';
-
+import { rootReducer } from './Reducers';
 type SensorEventType = {
     sensorid: String,
     createat: Date,
@@ -9,8 +8,9 @@ type SensorEventType = {
 }
 
 type SensorType = {
+    id: string
     name: string,
-    location: string,
+    location: number[],
     active: boolean,
     minval: number,
     maxval: number,

@@ -16,5 +16,5 @@ const initialState: StoreType = {
 };
 export const defaultReducer = (state: StoreType = initialState, action: actionType) => {
 
-
+    return state
 };
