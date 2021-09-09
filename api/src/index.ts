@@ -1,11 +1,11 @@
 import './db/conection'
 import dotenv from "dotenv";
 import server from './server';
-import a, { Socket } from 'socket.io';
+// import a, { Socket } from 'socket.io';
 
-const io = require("socket.io")(server, {
-    cors: { origin: "*" },
-});
+// const io = require("socket.io")(server, {
+//     cors: { origin: "*" },
+// });
 
 
 

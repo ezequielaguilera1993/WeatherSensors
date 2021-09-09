@@ -1,16 +1,25 @@
-import { model, Schema } from 'mongoose'
+import { model, Mongoose, Schema } from 'mongoose'
 //sensor
-
-interface ISensor {
+export interface ISensor {
     name: string,
-    location: string,
+    location: { type: "Point", coordinates: number[] }
     active: boolean,
     minval: number,
     maxval: number,
 }
 const sensorScheema = new Schema<ISensor>({
     name: { type: String, required: true },
-    location: { type: String, required: true },
+    location: {
+        type: {
+            type: String, // Don't do `{ location: { type: String } }`
+            enum: ['Point'], // 'location.type' must be 'Point'
+            required: true
+        },
+        coordinates: {
+            type: [Number],
+            required: true
+        }
+    },
     active: { type: Boolean, required: true },
     minval: { type: Number, required: true },
     maxval: { type: Number, required: true },
