@@ -1,7 +1,6 @@
 import { NextFunction, Request, Response, Router } from "express";
 import { createSensorEventDocument, SensorEventModel } from "../db/models/sensorEventsModel";
 import { createSensorDocument, SensorModel } from "../db/models/sensorModel";
-import { randomCoordinates, randomMinMaxValue } from "../db/seed";
 import { SensorType, StoreType } from "./getAllSensors";
 
 
