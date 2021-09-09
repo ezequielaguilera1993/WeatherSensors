@@ -1,0 +1,45 @@
+@keyframes appear {
+  from {
+    filter: opacity(0);
+  }
+  to {
+    filter: opacity(1);
+  }
+}
+
+#container {
+  animation: appear 0.2s normal forwards;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  height: 84vh;
+}
+#eventsContainer {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  padding-top: 1vh;
+  width: 100vw;
+}
+
+#event {
+  background-color: white;
+  width: 30vw;
+  height: 10vh;
+  border-radius: 2rem;
+  padding: 1vh 0vw;
+  margin: 1vh 2vw;
+  box-shadow: 0 0 0.7rem 0.1rem;
+}
+
+#eventTrigger {
+  @extend #event;
+  background-color: rgb(54, 54, 54);
+  color: white;
+}
+
+#title {
+  background-color: rgb(236, 236, 236);
+  padding: 1vh 0;
+  width: 100%;
+  display: none;
+}

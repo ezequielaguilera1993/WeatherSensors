@@ -9,6 +9,7 @@
 
 #SensorCard {
   background-color: white;
+  color: black;
   width: 20vw;
   margin: 1vmax 3vmax;
   border-radius: 0.2vmax;
@@ -78,13 +79,27 @@
     transform: scale(1);
   }
   to {
-    transform: scale(1.02);
+    transform: scale(1.01);
   }
 }
 
 #SensorCardEventTriggered {
   @extend #SensorCard;
-  box-shadow: 0 0 0.7rem 0.3rem rgb(255, 255, 255);
+  box-shadow: 0 0 0.7rem 0.4rem rgb(255, 255, 255);
   border: 1px solid rgb(104, 104, 104);
   animation: appear 1s normal forwards, heart infinite 0.7s alternate;
+  color: white;
+  background-color: rgb(37, 37, 37);
+  #delete {
+    filter: invert(1) opacity(0);
+  }
+
+  &:hover {
+    #delete {
+      filter: invert(1);
+    }
+    #name {
+      box-shadow: 0px 0px 0px 2px rgb(119, 119, 119);
+    }
+  }
 }

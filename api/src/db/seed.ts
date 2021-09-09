@@ -42,40 +42,25 @@ export const seed = async () => {
         }).save()
         )
     }
-
     //Cuando se resolvieron creo la variable que las contiene
     const sensorPromisesArrayResolved = await Promise.all(sensorPromisesArray)
     //Saco el id de la variable, y con el y un mapeo contruyo un array de promesas que crean eventos asociados
-    await Promise.all(sensorPromisesArrayResolved.map(e => createSensorEventDocument({
-        createat: new Date(),
-        sensorid: e._id,
-        value: Math.round(Math.random() * 24)
-    }).save()
-    )
-    )
+    await Promise.all(sensorPromisesArrayResolved.map(async e => {
+
+        let nested = []
+
+        for (let i = 1; i <= 10; i++) {
+            nested.push(createSensorEventDocument({
+                createat: new Date(),
+                sensorid: e._id,
+                value: Math.round(Math.random() * 24)
+            }).save())
+        }
+
+        Promise.all(nested).then(l => console.log("Ok!"))
+
+    }))
 
 
-
-
-    // console.log(await SensorModel.find().catch((err) => console.log(err)))
-
-    // if (user) {
-    // await createSensorEventDocument({
-    //     sensorid: user._id,
-    //     createat: new Date(),
-    //     value: 100
-    // }).save()
-
-    // await createSensorEventDocument({
-    //     sensorid: user._id,
-    //     createat: new Date(),
-    //     value: 100
-    // }).save()
-
-    // await createSensorEventDocument({
-    //     sensorid: user._id,
-    //     createat: new Date(),
-    //     value: 100
-    // }).save()
 
 }

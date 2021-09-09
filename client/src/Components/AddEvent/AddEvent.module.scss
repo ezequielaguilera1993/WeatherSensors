@@ -1,0 +1,25 @@
+.createSensor {
+  background-color: rgba(238, 238, 238, 0.897);
+  input {
+    border-radius: 20px;
+    width: 55%;
+    text-indent: 0.3vw;
+    outline: none;
+  }
+  border-radius: 20px;
+  width: fit-content;
+  margin: auto;
+  margin-top: 10vh;
+  padding: 0 2vw;
+  padding-bottom: 1vh;
+
+  label {
+    display: inline-block;
+    width: 30%;
+    margin-right: 0.2vw;
+  }
+}
+
+.errorLabel {
+  font-size: 0.8rem;
+}

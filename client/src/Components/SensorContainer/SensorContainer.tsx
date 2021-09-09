@@ -44,7 +44,9 @@ export const SensorContainer: React.FunctionComponent<{}> = ({ }) => {
                         transform: "translateY(-50%)",
                         boxShadow: "0 0 1rem 0.1rem white",
                         fontSize: "1.2rem",
-                        border: "10px solid black outset"
+                        border: "10px solid black outset",
+                        backgroundColor: "rgb(37, 37, 37)",
+                        color: "white",
                     }}
                 >
                     Crear Sensor

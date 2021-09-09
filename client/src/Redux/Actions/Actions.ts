@@ -48,6 +48,7 @@ export function deleteSensor(payload: any): actionType {
     }
 }
 export function putSensorEvent(payload: any): actionType {
+
     return {
         type: "PUT_SENSOR_EVENT",
         payload

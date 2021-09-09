@@ -10,7 +10,6 @@ import {
 import { actionType } from '../Actions/Actions'
 import { StoreType } from '../Store';
 
-
 const initialState: StoreType = {
     sensors: []
 };
@@ -19,9 +18,9 @@ export const defaultReducer = (state: StoreType = initialState, action: actionTy
 
     const type = action.type
     const payload = action.payload
-    const sensors = state.sensors
-    ////////SENSOR//////////////////
+    let sensors = state.sensors
 
+    ////////SENSOR//////////////////
     if (type === GET_ALL_SENSORS) {
 
         return payload as StoreType
@@ -36,24 +35,20 @@ export const defaultReducer = (state: StoreType = initialState, action: actionTy
         const { id, name } = payload
         return {
             sensors: sensors.map(e => {
-
                 if (e.id !== id) return e
                 else if (e.id === id) {
                     e.name = name
                     return e
                 }
-
             })
         } as StoreType
     }
 
     if (type === PUT_SENSOR) {
-        console.log(sensors)
-        sensors.push(payload)
-        console.log(sensors)
-
         return { sensors } as StoreType
     }
+
+
 
 
 
@@ -61,14 +56,22 @@ export const defaultReducer = (state: StoreType = initialState, action: actionTy
     ////////SENSOR EVENT//////////////////
     if (type === PUT_SENSOR_EVENT) {
 
-        return { sensors: [] } as StoreType
+
+
+        sensors = sensors.map(e => {
+            if (e.id === payload.sensorid) {
+                e.sensorEvents.push(payload)
+                return e
+            }
+            else return e
+        })
+
+        return { sensors } as StoreType
     }
 
     if (type === DELETE_SENSOR_EVENT) {
-
         return { sensors: [] } as StoreType
     }
-
 
     return state
 };

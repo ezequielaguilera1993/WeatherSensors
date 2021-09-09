@@ -36,13 +36,9 @@ putSensor.put("/putSensor", async (req: Request, res: Response, next: NextFuncti
             sensorEvents: []
         }
 
-
         res.json(sensorStoreWay)
-
-    }
-
-
-    ).catch(err => res.sendStatus(500).json({ err }))
+    })
+        .catch(err => res.sendStatus(500).json({ err }))
 
 
 })
