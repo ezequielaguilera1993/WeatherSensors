@@ -1,26 +1,29 @@
 import { createStore, applyMiddleware, compose } from 'redux';
 import thunk from 'redux-thunk';
 import { rootReducer } from './Reducers';
+
 type SensorEventType = {
     sensorid: String,
     createat: Date,
     value: number
 }
 
-type SensorType = {
+export type SensorType = {
     id: string
     name: string,
     location: number[],
     active: boolean,
     minval: number,
     maxval: number,
+}
+
+export interface SensorAndEventsType extends SensorType {
     sensorEvents: SensorEventType[]
 }
 
 export type StoreType = {
-    sensors: SensorType[]
+    sensors: SensorAndEventsType[]
 }
-
 
 declare global {
     interface Window {

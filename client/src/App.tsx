@@ -1,13 +1,14 @@
 import './App.css';
-import { Sensors } from './Components/Sensors/Sensors';
 import { SensorEvents } from './Components/SensorEvents/SensorEvents';
 import { Route } from 'react-router';
-
+import { NavBar } from './Components/NavBar/NavBar';
+import { SensorContainer } from './Components/SensorContainer/SensorContainer';
 
 function App() {
   return (
     <div className="App">
-      <Route path="/sensors" component={Sensors} />
+      <NavBar />
+      <Route path="/" component={SensorContainer} />
       <Route path="/sensorEvent" component={SensorEvents} />
     </div>
   );

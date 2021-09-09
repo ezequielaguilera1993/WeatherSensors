@@ -33,8 +33,6 @@ getAllSensors.get("/getAllSensors", async (req: Request, res: Response, next: Ne
         value: e.value,
         sensorid: e.sensorid.toString(),
     }))
-    // console.log("sensorEvents", sensorEvents);
-    // console.log("sensorsBrut", sensorsBrut[0]._id.toString());
 
     const populateSensors: SensorType[] = sensorsBrut.map(eSensor => ({
         id: eSensor._id,

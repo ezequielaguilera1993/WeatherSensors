@@ -1,0 +1,90 @@
+@keyframes appear {
+  from {
+    filter: opacity(0);
+  }
+  to {
+    filter: opacity(1);
+  }
+}
+
+#SensorCard {
+  background-color: white;
+  width: 20vw;
+  margin: 1vmax 3vmax;
+  border-radius: 0.2vmax;
+  animation: appear 1s normal forwards;
+  height: fit-content;
+  padding: 2vh 0;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 0 1rem 0.3rem rgb(58, 58, 58);
+  border: 1px solid rgb(209, 209, 209);
+  border-radius: 1vmax;
+  position: relative;
+  &:hover {
+    #edit {
+      filter: opacity(1);
+      transition: all 0.4s;
+    }
+    #delete {
+      filter: opacity(1);
+      transition: all 0.4s;
+      &:active {
+        transform: scale(1.1) rotate(100grad);
+        transition: all 0.09s;
+      }
+    }
+    #name {
+      box-shadow: 0px 0px 0px 0.3px rgb(0, 0, 0) inset;
+      transition: all 0.4s;
+    }
+  }
+}
+
+#nameContainer {
+  position: relative;
+  margin: auto;
+}
+
+#name {
+  padding: 0 0.7vw;
+  border-radius: 1vmax;
+  outline: none;
+  border: 0;
+  text-align: center;
+  width: 14vw;
+  align-self: center;
+  font-size: 1.4rem;
+}
+#edit {
+  width: 1rem;
+  position: absolute;
+  right: 0.8vw;
+  top: 5px;
+  filter: opacity(0);
+}
+
+#delete {
+  width: 2vw;
+  height: 2vw;
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  filter: opacity(0);
+}
+
+@keyframes heart {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(1.02);
+  }
+}
+
+#SensorCardEventTriggered {
+  @extend #SensorCard;
+  box-shadow: 0 0 2rem 1rem rgb(255, 255, 255);
+  border: 1px solid rgb(219, 219, 219);
+  animation: appear 1s normal forwards, heart infinite 0.7s alternate;
+}

@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom"
+import Style from './SensorEvents.module.scss'
 
 
 export const SensorEvents: React.FunctionComponent<{}> = ({ }) => {

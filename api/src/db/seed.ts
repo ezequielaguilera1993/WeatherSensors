@@ -8,9 +8,8 @@ export const seed = async () => {
     await SensorModel.deleteMany().catch(err => console.log(err))
     await SensorEventModel.deleteMany().catch(err => console.log(err))
 
-    let points = ["Paris", "Chascomus", "El Riachuelo", "Coghlan"]
+    let points = ["Paris", "Chascomus", "El Riachuelo", "Coghlan", "Manhattan", "El Valle", "Yaren", "Tokelau", "San Eustaquio", "San Marino", "Palau", "Funafuti", "Gustavia", "Marigot", "Lima", "Chascomús", "Rawson", "El Bolsón"]
     let sensorPromisesArray = [];
-
     const randomMinMaxValue = () => {
         const randomMin = Math.round(Math.random() * 50 - 10)
         const randomMax = Math.round(randomMin + Math.random() * 24)
@@ -49,7 +48,7 @@ export const seed = async () => {
     await Promise.all(sensorPromisesArrayResolved.map(e => createSensorEventDocument({
         createat: new Date(),
         sensorid: e._id,
-        value: Math.round(-10 + Math.random() * 60)
+        value: Math.round(Math.random() * 24)
     }).save()
     )
     )

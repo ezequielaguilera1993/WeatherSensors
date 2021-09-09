@@ -14,7 +14,17 @@ import { StoreType } from '../Store';
 const initialState: StoreType = {
     sensors: []
 };
+
 export const defaultReducer = (state: StoreType = initialState, action: actionType) => {
+
+    const type = action.type
+    const payload = action.payload
+
+    if (type === GET_ALL_SENSORS) {
+
+        return payload
+    }
+
 
     return state
 };
