@@ -1,6 +1,19 @@
 import { createSensorEventDocument, SensorEventModel } from "./models/sensorEventsModel"
 import { createSensorDocument, ISensor, SensorModel } from "./models/sensorModel"
 
+export const randomMinMaxValue = () => {
+    const randomMin = Math.round(Math.random() * 50 - 10)
+    const randomMax = Math.round(randomMin + Math.random() * 24)
+    return { randomMin, randomMax }
+}
+
+export const randomCoordinates = () => {
+    const randomSign = Math.random() < 0.5 ? -1 : 1
+    const lat = Math.round(Math.random() * 180 * randomSign)
+    const long = Math.round(Math.random() * 90 * randomSign)
+    return { lat, long }
+}
+
 
 //El seed borra todo y planta de cero lo básico
 export const seed = async () => {
@@ -10,18 +23,6 @@ export const seed = async () => {
 
     let points = ["Paris", "Chascomus", "El Riachuelo", "Coghlan", "Manhattan", "El Valle", "Yaren", "Tokelau", "San Eustaquio", "San Marino", "Palau", "Funafuti", "Gustavia", "Marigot", "Lima", "Chascomús", "Rawson", "El Bolsón"]
     let sensorPromisesArray = [];
-    const randomMinMaxValue = () => {
-        const randomMin = Math.round(Math.random() * 50 - 10)
-        const randomMax = Math.round(randomMin + Math.random() * 24)
-        return { randomMin, randomMax }
-    }
-
-    const randomCoordinates = () => {
-        const randomSign = Math.random() < 0.5 ? -1 : 1
-        const lat = Math.round(Math.random() * 180 * randomSign)
-        const long = Math.round(Math.random() * 90 * randomSign)
-        return { lat, long }
-    }
 
     for (let i = 1; i <= points.length; i++) {
 

@@ -6,7 +6,6 @@ import { SensorModel } from "../db/models/sensorModel";
 export const deleteSensor = Router();
 
 deleteSensor.delete("/deleteSensor", async (req: Request, res: Response, next: NextFunction) => {
-    console.log(req.body);
     const id = req.body.id
 
     SensorModel.findByIdAndDelete(id).catch(err => res.sendStatus(500).end)

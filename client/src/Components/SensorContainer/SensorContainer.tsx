@@ -12,7 +12,6 @@ import { SensorCard } from "../SensorCard/SensorCard";
 export const SensorContainer: React.FunctionComponent<{}> = ({ }) => {
     const dispatch = useDispatch();
     const store: StoreType = useSelector((state: RootState) => state).defaultReducer
-
     const sensors: SensorAndEventsType[] = store.sensors
 
     useEffect(() => {
@@ -32,6 +31,25 @@ export const SensorContainer: React.FunctionComponent<{}> = ({ }) => {
                     name={e.name}
                     sensorEvents={e.sensorEvents}
                 />)}
+
+            <Link to="/createSensor">
+                <button
+                    style={{
+                        position: "absolute",
+                        right: "4%",
+                        top: "50%",
+                        width: "7vw",
+                        height: "7vw",
+                        borderRadius: "50%",
+                        transform: "translateY(-50%)",
+                        boxShadow: "0 0 1rem 0.1rem white",
+                        fontSize: "1.2rem",
+                        border: "10px solid black outset"
+                    }}
+                >
+                    Crear Sensor
+                </button>
+            </Link>
         </div>
     )
 

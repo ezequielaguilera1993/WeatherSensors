@@ -48,8 +48,11 @@ export const defaultReducer = (state: StoreType = initialState, action: actionTy
     }
 
     if (type === PUT_SENSOR) {
+        console.log(sensors)
+        sensors.push(payload)
+        console.log(sensors)
 
-        return { sensors: [] } as StoreType
+        return { sensors } as StoreType
     }
 
 

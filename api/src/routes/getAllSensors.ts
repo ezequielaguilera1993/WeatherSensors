@@ -7,7 +7,7 @@ type SensorEventType = {
     value: number
 }
 
-type SensorType = {
+export type SensorType = {
     id: string,
     name: string,
     location: number[],

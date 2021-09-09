@@ -29,6 +29,7 @@ export function getAllSensors() {
 }
 
 export function putSensor(payload: any): actionType {
+
     return {
         type: "PUT_SENSOR",
         payload

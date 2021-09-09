@@ -61,7 +61,7 @@ export const SensorCard: React.FunctionComponent<SensorAndEventsType> = ({
             <img id={Style.edit} src="https://image.flaticon.com/icons/png/512/51/51648.png" />
         </div>
         <div>{active}</div>
-        {/* <div>{id}</div> */}
+
         <div>{"Latitud: " + location[0] + " / Longitud: " + location[1]}</div>
         <div>{"Mínima: " + minval}</div>
         <div>{"Máxima: " + maxval}</div>

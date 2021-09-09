@@ -10,7 +10,6 @@ patchSensorName.patch("/patchSensorName", async (req: Request, res: Response, ne
     console.log(id, name);
 
     SensorModel.findByIdAndUpdate(id, { $set: { name: name } })
-        .then(e => console.log(e))
         .catch(err => res.sendStatus(500).end)
 
     res.sendStatus(200)
