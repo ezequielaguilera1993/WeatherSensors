@@ -17,10 +17,16 @@ export const SensorEvents: React.FunctionComponent<{ match: any }> = ({ match })
     let sensorName = sensor?.name
 
     function trigger(value: number): boolean {
-        if (minval && maxval) {
+        if (minval !== undefined && maxval !== undefined) {
             return (value <= minval || value >= maxval) ? true : false
         }
         else { alert("ERROR en trigger"); return false }
+    }
+    function fecha(fractal: Date) {
+        var m = ["Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"]
+        var ds = ["Domingo", "Lunes", "Martes", "Miércoles", "Jueves", "Viernes", "Sábado"]
+        var f = new Date(fractal);
+        return ds[f.getDay()] + " " + f.getDate() + " de " + m[f.getMonth()] + " de " + f.getFullYear() + " " + f.getHours() + ":" + f.getMinutes()
     }
 
     return (<div id={Style.container}>
@@ -30,8 +36,8 @@ export const SensorEvents: React.FunctionComponent<{ match: any }> = ({ match })
 
             {sensorEvents.map(e =>
                 <div id={trigger(e.value) ? Style.eventTrigger : Style.event}>
-                    <div>{"Value: " + e.value}</div>
-                    <div>{"Creación: " + e.createat}</div>
+                    <div>{"Temperatura de disparo: "} <span style={{ fontSize: "1.3rem", verticalAlign: "center" }}> {e.value + "°C"}</span></div>
+                    <div>{fecha(e.createat)}</div>
                 </div>
             )}
         </div>

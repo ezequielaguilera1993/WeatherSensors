@@ -5,11 +5,14 @@ import { Dispatch, useEffect } from "react";
 import { getAllSensors, putSensor, putSensorEvent } from "../../Redux/Actions/Actions";
 import Style from './AddEvent.module.scss'
 import { useForm, Resolver } from "react-hook-form";
+import swal from 'sweetalert';
+
 
 
 type FormValues = {
     value: number
 };
+
 
 
 const resolver: Resolver<FormValues> = async (values) => {
@@ -34,7 +37,6 @@ const resolver: Resolver<FormValues> = async (values) => {
     };
 };
 
-
 export const AddEvent: React.FunctionComponent<{ match: any }> = ({ match }) => {
     const dispatch = useDispatch();
 
@@ -47,12 +49,13 @@ export const AddEvent: React.FunctionComponent<{ match: any }> = ({ match }) => 
     } = useForm<FormValues>({
         resolver: resolver
     });
+
     const onSubmit = handleSubmit((data) => {
         axios.put("http://localhost:3001/sensor/putSensorEvent", {
             data: { value: data.value, id }
         }).then((res) => {
-
             dispatch(putSensorEvent(res.data))
+            swal("Evento asociado con exito 👌");
 
         }).catch(err => console.log(err))
 

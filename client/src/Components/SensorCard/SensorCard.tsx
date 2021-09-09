@@ -53,23 +53,25 @@ export const SensorCard: React.FunctionComponent<SensorAndEventsType> = ({
     let eventTriggered = eventsValues.some(e => e <= minval || e >= maxval)
 
     return (
-        <Link to={"/SensorEvents/" + id} style={{ textDecoration: 'none' }}>
-            <div id={eventTriggered ? Style.SensorCardEventTriggered : Style.SensorCard}>
+        <div id={eventTriggered ? Style.SensorCardEventTriggered : Style.SensorCard}>
 
-                <img onClick={handleDeleteSensor} id={Style.delete} src="https://cdn.icon-icons.com/icons2/1157/PNG/512/1487086362-cancel_81578.png" />
+            <img onClick={handleDeleteSensor} id={Style.delete} src="https://cdn.icon-icons.com/icons2/1157/PNG/512/1487086362-cancel_81578.png" />
 
-                <div id={Style.nameContainer}>
-                    <input id={Style.name} contentEditable={true} onChange={onChangeSensorName} defaultValue={initialName} />
-                    <img id={Style.edit} src="https://image.flaticon.com/icons/png/512/51/51648.png" />
-                </div>
-                <div>{active}</div>
-
-                <div>{"Latitud: " + location[0] + " / Longitud: " + location[1]}</div>
-                <div>{"Mínima: " + minval}</div>
-                <div>{"Máxima: " + maxval}</div>
-
+            <div id={Style.nameContainer}>
+                <input id={Style.name} contentEditable={true} onChange={onChangeSensorName} defaultValue={initialName} />
+                <img id={Style.edit} src="https://image.flaticon.com/icons/png/512/51/51648.png" />
             </div>
-        </Link>
+            <div>{active}</div>
+
+            <div>{"Latitud: " + location[0] + " / Longitud: " + location[1]}</div>
+            <div>{"Mínima: " + minval}</div>
+            <div>{"Máxima: " + maxval}</div>
+
+            <Link to={"/SensorEvents/" + id} style={{ textDecoration: 'none', color: "white", backgroundColor: "#ffffff2d", width: "fit-content", alignSelf: "center", padding: "0 1vw", marginTop: "1vh", borderRadius: "1rem" }}>
+                Ir a Eventos
+            </Link>
+
+        </div>
     )
 
 }

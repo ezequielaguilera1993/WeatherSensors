@@ -5,14 +5,13 @@ import { Dispatch, useEffect } from "react";
 import { getAllSensors, putSensor } from "../../Redux/Actions/Actions";
 import Style from './CreateSensor.module.scss'
 import { useForm, Resolver } from "react-hook-form";
-
+import swal from 'sweetalert';
 
 type FormValues = {
     name: string;
     lat: string;
     long: string;
 };
-
 
 
 const resolver: Resolver<FormValues> = async (values) => {
@@ -52,8 +51,8 @@ export const CreateSensor: React.FunctionComponent<{}> = ({ }) => {
         axios.put("http://localhost:3001/sensor/putSensor", {
             data
         }).then((res) => {
-
             dispatch(putSensor(res.data))
+            swal("Sensor creado con éxito :D");
 
         }).catch(err => console.log(err))
 
