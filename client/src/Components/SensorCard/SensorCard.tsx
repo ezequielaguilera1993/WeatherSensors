@@ -1,10 +1,11 @@
 import { Link } from "react-router-dom"
 import axios from 'axios';
 import { useDispatch, useSelector } from "react-redux";
-import { Dispatch, useEffect } from "react";
-import { getAllSensors } from "../../Redux/Actions/Actions";
+import { Dispatch, useEffect, useState } from "react";
+import { deleteSensor, getAllSensors, patchSensorName } from "../../Redux/Actions/Actions";
 import Style from './SensorCard.module.scss'
 import { SensorType, SensorAndEventsType } from "../../Redux/Store";
+import { TargetElement } from "@testing-library/user-event";
 
 export const SensorCard: React.FunctionComponent<SensorAndEventsType> = ({
     active,
@@ -12,16 +13,40 @@ export const SensorCard: React.FunctionComponent<SensorAndEventsType> = ({
     location,
     maxval,
     minval,
-    name,
+    name: initialName,
     sensorEvents
 }) => {
+    const dispatch = useDispatch();
+
+
 
     function handleDeleteSensor() {
-        console.log("img");
         axios.delete("http://localhost:3001/sensor/deleteSensor", {
             data: { id }
-        });
+        }).then(() => {
+            //Si sale bien, lo elimino del estadox
+            dispatch(deleteSensor(id))
+
+        }).catch(err => console.log(err))
     }
+
+
+    async function onChangeSensorName(e: React.ChangeEvent<HTMLInputElement>) {
+        let changeName = e.target.value
+        axios.patch("http://localhost:3001/sensor/patchSensorName", {
+            data: { id, name: changeName }
+        }).then(() => {
+            //Si sale bien, lo elimino del estadox
+            dispatch(patchSensorName({ id, name: changeName }))
+
+        }).catch(err => console.log(err))
+    }
+
+
+
+
+
+
 
     let eventsValues = sensorEvents.map(e => e.value)
 
@@ -32,7 +57,7 @@ export const SensorCard: React.FunctionComponent<SensorAndEventsType> = ({
         <img onClick={handleDeleteSensor} id={Style.delete} src="https://cdn.icon-icons.com/icons2/1157/PNG/512/1487086362-cancel_81578.png" />
 
         <div id={Style.nameContainer}>
-            <input id={Style.name} contentEditable={true} defaultValue={name} />
+            <input id={Style.name} contentEditable={true} onChange={onChangeSensorName} defaultValue={initialName} />
             <img id={Style.edit} src="https://image.flaticon.com/icons/png/512/51/51648.png" />
         </div>
         <div>{active}</div>

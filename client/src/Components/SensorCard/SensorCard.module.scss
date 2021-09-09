@@ -84,7 +84,7 @@
 
 #SensorCardEventTriggered {
   @extend #SensorCard;
-  box-shadow: 0 0 2rem 1rem rgb(255, 255, 255);
-  border: 1.4px solid rgb(187, 187, 187);
+  box-shadow: 0 0 0.7rem 0.3rem rgb(255, 255, 255);
+  border: 1px solid rgb(104, 104, 104);
   animation: appear 1s normal forwards, heart infinite 0.7s alternate;
 }
