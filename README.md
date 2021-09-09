@@ -53,7 +53,7 @@ Al tocar el boton "Ir a Eventos" sobre cada sensor. Se rutea hacia un componente
 #### La SPA esta hecha enteramente en Typescript que me gusta mucho mas, se estilizó con Sass, componentizo con ReactJs, manejando estados globales con Redux. Back con Express y Type, DB con MongoDB y ODM Mongoose.
 
 
-#### Dejo mi información de contacto
+### Ante cualquier consulta que surja, dejo mi información de contacto
 
 ### ～ 𝐂𝐯: https://drive.google.com/drive/folders/1N-7CiVb7uNXslN5gYVhKVT38DBef0FDr?usp=sharing
 ### ～ 𝐏𝐨𝐫𝐭𝐟𝐨𝐥𝐢𝐨: https://www.ezequielaguileraportfolio.com/
