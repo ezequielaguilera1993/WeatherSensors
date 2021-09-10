@@ -26,7 +26,7 @@
 
 #### Con el boton de la derecha se accede a crear un Sensor
 
-![](https://i.imgur.com/5B0rPHH.jpg)
+![](https://i.imgur.com/RzVv9hS.jpg)
 
 <br/>
 <br/>
