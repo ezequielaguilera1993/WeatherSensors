@@ -63,8 +63,14 @@ const seed = async () => {
             let percentage = Math.round(100 - ((100 / points.length - 1) * pointsLength))
 
             console.log("Cargando eventos relacionados: " + percentage + "%")
-            if (percentage === 100) console.log("Listo! queda hacer el npm start acá en api, npm install en client, y luego el npm start de client")
+
+
             pointsLength--
+            if (percentage === 100) {
+                console.log("Listo! queda hacer el npm start acá en api, npm install en client, y luego el npm start de client")
+
+                setTimeout(mongoose.disconnect, 1000)
+            }
         })
 
     }))
