@@ -14,6 +14,12 @@
 <br/>
 <br/>
 
+
+#### La SPA esta hecha enteramente en Typescript que me gusta mucho mas, se estilizó con Sass, componentizo con ReactJs, manejando estados globales con Redux. Back con Express y Type, DB con MongoDB y ODM Mongoose.
+
+<br/>
+<br/>
+
 ## Pantalla inicial
 
 #### Las tarjetas que estan con fondo negro, son las que al menos un evento se disparo. Al hacer hover sobre una tarjeta, aparecen indicadores de edicion, una cruz que si se toca elimina el Sensor, y un lapiz y un borde en negro en el nombre para editarlo. Para mejorar al experiencia de usuario al ir escribiendo sobre el nombre se va guardando automaticamente en base de datos (aca faltaría un guardando... quizas)
@@ -53,7 +59,6 @@ Al tocar el boton "Ir a Eventos" sobre cada sensor. Se rutea hacia un componente
 
 #### Me quedo cosas pendientes que voy a ir sumando, como agregarle socket.io que la mejoraria muchisimo, algun gradiente de colores en los Sensores que vaya de azul a rojo, dependiendo la temp minima y máxima que maneje, un valor que vaya variando y al llegar a extremos actualice estos min y max entre otras cosas.
 
-#### La SPA esta hecha enteramente en Typescript que me gusta mucho mas, se estilizó con Sass, componentizo con ReactJs, manejando estados globales con Redux. Back con Express y Type, DB con MongoDB y ODM Mongoose.
 
 ### Ante cualquier consulta que surja, dejo mi información de contacto
 
