@@ -1,4 +1,4 @@
-import './App.css';
+import './App.scss';
 import { SensorEvents } from './Components/SensorEvents/SensorEvents';
 import { Route } from 'react-router';
 import { NavBar } from './Components/NavBar/NavBar';
