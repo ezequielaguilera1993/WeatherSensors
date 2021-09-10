@@ -1,8 +1,8 @@
 import { createSensorEventDocument, SensorEventModel } from "./models/sensorEventsModel"
 import { createSensorDocument, ISensor, SensorModel } from "./models/sensorModel"
-import mongoose, { model, Schema } from 'mongoose'
 import { randomCoordinates, randomMinMaxValue } from "./utils"
 
+import mongoose, { model, Schema } from 'mongoose'
 
 
 

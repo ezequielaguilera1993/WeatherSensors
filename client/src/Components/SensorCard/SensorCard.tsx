@@ -67,7 +67,7 @@ export const SensorCard: React.FunctionComponent<SensorAndEventsType> = ({
             <div>{"Mínima: " + minval}</div>
             <div>{"Máxima: " + maxval}</div>
 
-            <Link to={"/SensorEvents/" + id} style={{ textDecoration: 'none', color: "white", backgroundColor: "#ffffff2d", width: "fit-content", alignSelf: "center", padding: "0 1vw", marginTop: "1vh", borderRadius: "1rem" }}>
+            <Link to={"/SensorEvents/" + id} style={{ textDecoration: 'none', color: "white", backgroundColor: "#b8b8b8", width: "fit-content", alignSelf: "center", padding: "0 1vw", marginTop: "1vh", borderRadius: "1rem" }}>
                 Ir a Eventos
             </Link>
 
